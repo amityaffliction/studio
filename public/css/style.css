@@ -229,8 +229,8 @@ Header section
 .site-logo {
 	display: inline-block;
 	padding: 0;
-	width: 100px;
-	padding: 10px 10px;
+	width: 230px;
+	padding: 23px 10px;
 	/* padding: 44px 15px; */
 }
 
@@ -395,11 +395,11 @@ Hero section
 }
 
 .hr-img img {
-
 	min-width: 430px;
 	position: relative;
+	padding: 100px 30px;
 	left: -34px;
-	top: 50px;
+	top: 250px;
 	opacity: 0;
 }
 
@@ -1339,6 +1339,7 @@ Artest Page
 .similar-song .ss-thumb {
 	border-radius: 10px;
 	margin-bottom: 22px;
+	min-height: 300px;
 	min-width: 100%;
 }
 

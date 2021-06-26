@@ -6,12 +6,42 @@ var config = require('../config');
 var axios = require('axios')
 
 var mailTemplate = require('../utility/sendMail')
-var transporter = nodemailer.createTransport(sendinBlue({
-  apiKey: 'bJ9wG4dnP5FfBLIR'
-}))
-
+let transporter = nodemailer.createTransport({
+        host: "smtp-relay.sendinblue.com",
+        port: 587,
+        auth: {
+          user: "domankey@gmail.com",
+          pass: "G0SNX4bsahcPAYEO",
+        },
+   });
 
 /* GET home page. */
+
+const getId= (url) => {
+  return url.split('/')[url.split('/').length-1]
+}
+
+const parseMainInfo = () => {
+  return axios.get(`https://kr.object.ncloudstorage.com/manmanman/info.txt`)
+    .then(res => {
+      let result = {}
+      let text = res.data;
+      text.split('\n').forEach((element, index) => {
+        let parsed = element.split('--')
+        // console.log(parsed[2])
+        parsed[2] = `https://www.youtube.com/embed/${getId(parsed[2])}`
+        result[index] = parsed
+      });
+
+      return result
+    })
+    .catch(err => {
+      return {
+        artist: 'Error Loading',
+        song: '...',
+      }
+    })
+}
 
 const parseInfo = (num) => {
   return axios.get(`https://kr.object.ncloudstorage.com/studio/${num}/info.txt`)
@@ -46,10 +76,12 @@ router.get('/', function (req, res, next) {
 });
 
 router.get('/kr', function (req, res, next) {
-  Promise.all([1,2,3].map(num=> {
-    return parseInfo(num)
-  }))
-  .then(result =>{
+
+  new Promise((resolve, reject) => {
+    var result =  parseMainInfo();
+    resolve(result);
+  }).then(result =>{
+
     res.render('index_kr',{
       data: result
     });
@@ -58,14 +90,16 @@ router.get('/kr', function (req, res, next) {
 });
 
 router.get('/en', function (req, res, next) {
-  Promise.all([1,2,3].map(num=> {
-    return parseInfo(num)
-  }))
-  .then(result =>{
+  new Promise((resolve, reject) => {
+    var result =  parseMainInfo();
+    resolve(result);
+  }).then(result =>{
+
     res.render('index_en',{
       data: result
     });
   })
+
 });
 
 /* GET contact page. */

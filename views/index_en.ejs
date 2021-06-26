@@ -2,9 +2,9 @@
 <html lang="zxx">
 
 <head>
-	<title>Watch Out Studio</title>
+	<title>MAN MAN man Studio</title>
 	<meta charset="UTF-8">
-	<meta name="description" content="Watch Out Studio">
+	<meta name="description" content="MANMANman Studio">
 	<meta name="keywords" content="music, html">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -35,9 +35,9 @@
 
 <body>
 	<!-- Page Preloder -->
-	<div id="preloder">
+	<!-- <div id="preloder">
 		<div class="loader"></div>
-	</div>
+	</div> -->
 
 	<!-- Header section -->
 	<% include partials/header_en%>
@@ -46,38 +46,38 @@
 	<!-- Hero section -->
 	<section class="hero-section">
 		<div class="hero-slider owl-carousel">
-			<div class="hs-item">
+			<!-- <div class="hs-item">
 				<div class="container">
 					<div class="row">
 						<div class="col-lg-6">
 							<div class="hs-text">
-								<h2>Watch Out<span> Studio</span></h2>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, incididunt ut labore et dolore magna aliqua. </p>
-								<a href="/contact/en" class="site-btn">Contact</a>
+								<h2><span>Premium </span> Recording & Mix </h2>
+								<p>Recording / Mixing / Mastering</p>
+								<a href="/contact/en" class="site-btn">컨택하기</a>
 
 							</div>
 						</div>
 						<div class="col-lg-6">
 							<div class="hr-img">
-								<img src="/img/logo2.jpg" alt="">
+								<img src="/img/manlogo.png" alt="">
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> -->
 			<div class="hs-item">
 				<div class="container">
 					<div class="row">
 						<div class="col-lg-6">
 							<div class="hs-text">
-								<h2><span>Premium </span> Mix & Master</h2>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, incididunt ut labore et dolore magna aliqua.</p>
-								<a href="/contact/en" class="site-btn">Contact</a>
+								<h2><span>Premium </span> Recording & Mix </h2>
+								<p>Recording / Mixing / Mastering</p>
+								<a href="/contact/en" class="site-btn">컨택하기</a>
 							</div>
 						</div>
 						<div class="col-lg-6">
 							<div class="hr-img">
-								<img src="/img/logo2.jpg" alt="">
+								<img src="/img/manlogo.png" alt="">
 							</div>
 						</div>
 					</div>
@@ -86,159 +86,40 @@
 		</div>
 	</section>
 	<!-- Hero section end -->
-
-<!-- Concept section -->
-<section class="concept-section spad">
-	<div class="container ">
-		<div class="row">
-			<div class="col-lg-6">
-				<div class="section-title">
-					<h2>Our Latest Work</h2>
+	<!-- Concept section -->
+	<section class="concept-section spad">
+		<div class="container ">
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="section-title">
+						<h2>Portfolio</h2>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<p></p>
 				</div>
 			</div>
-			<div class="col-lg-6">
-				<p>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-					Quis ipsum suspendisse ultrices gravida.</p>
-			</div>
+			<div class="row">
+				<% for(var i=0; i< Object.keys(data).length; i++) { %>
+				<div class="col-xl-4 col-sm-6">
+					<div class="similar-song">
+						<iframe class="ss-thumb" loading="lazy" src=<%= data[i][2] %> title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			
+						<h4><%= data[i][0] %> </h4>
+						<p><%= data[i][1] %> </p>
+				
+					</div>
+				</div>
+				<% } %>
+				
 		</div>
-		<div class="row">
-			<div class="col-xl-4 col-sm-6">
-				<div class="similar-song">
-					<img class="ss-thumb" src="https://kr.object.ncloudstorage.com/studio/1/image.jpg" alt="">
-					<h4><%= data[0].artist %> </h4>
-					<p><%= data[0].song %> </p>
-					<div class="single_player">
-						<div class="jp-jplayer jplayer" data-ancestor=".jp_container_8" data-url="https://kr.object.ncloudstorage.com/studio/1/music.mp3"></div>
-						<div class="jp-audio jp_container_8" role="application" aria-label="media player">
-							<div class="jp-gui jp-interface">
-								<!-- Player Controls -->
-								<div class="ss-controls">
-									<div class="songs-links">
-										<!-- <a href=""><img src="img/icons/p-1.png" alt=""></a>
-										<a href=""><img src="img/icons/p-2.png" alt=""></a>
-										<a href=""><img src="img/icons/p-3.png" alt=""></a> -->
-									</div>
-									<div class="player_controls_box">
-										<button class="jp-prev player_button" tabindex="0"></button>
-										<button class="jp-play player_button" tabindex="0"></button>
-										<button class="jp-next player_button" tabindex="0"></button>
-										<button class="jp-stop player_button" tabindex="0"></button>
-									</div>
-								</div>
-								<!-- Progress Bar -->
-								<div class="player_bars">
-									<div class="jp-progress">
-										<div class="jp-seek-bar">
-											<div>
-												<div class="jp-play-bar"><div class="jp-current-time" role="timer" aria-label="time">0:00</div></div>
-											</div>
-										</div>
-									</div>
-									<div class="jp-duration ml-auto" role="timer" aria-label="duration">00:00</div>
-								</div>
-							</div>
-							<div class="jp-no-solution">
-								<span>Update Required</span>
-								To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-xl-4 col-sm-6">
-				<div class="similar-song">
-					<img class="ss-thumb" src="https://kr.object.ncloudstorage.com/studio/2/image.jpg" alt="">
-					<h4><%= data[1].artist %> </h4>
-					<p><%= data[1].song %> </p>
-					<div class="single_player">
-						<div class="jp-jplayer jplayer" data-ancestor=".jp_container_9" data-url="https://kr.object.ncloudstorage.com/studio/2/music.mp3"></div>
-						<div class="jp-audio jp_container_9" role="application" aria-label="media player">
-							<div class="jp-gui jp-interface">
-								<!-- Player Controls -->
-								<div class="ss-controls">
-									<div class="songs-links">
-										<!-- <a href=""><img src="img/icons/p-1.png" alt=""></a>
-										<a href=""><img src="img/icons/p-2.png" alt=""></a>
-										<a href=""><img src="img/icons/p-3.png" alt=""></a> -->
-									</div>
-									<div class="player_controls_box">
-										<button class="jp-prev player_button" tabindex="0"></button>
-										<button class="jp-play player_button" tabindex="0"></button>
-										<button class="jp-next player_button" tabindex="0"></button>
-										<button class="jp-stop player_button" tabindex="0"></button>
-									</div>
-								</div>
-								<!-- Progress Bar -->
-								<div class="player_bars">
-									<div class="jp-progress">
-										<div class="jp-seek-bar">
-											<div>
-												<div class="jp-play-bar"><div class="jp-current-time" role="timer" aria-label="time">0:00</div></div>
-											</div>
-										</div>
-									</div>
-									<div class="jp-duration ml-auto" role="timer" aria-label="duration">00:00</div>
-								</div>
-							</div>
-							<div class="jp-no-solution">
-								<span>Update Required</span>
-								To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-xl-4 col-sm-6">
-				<div class="similar-song">
-					<img class="ss-thumb" src="https://kr.object.ncloudstorage.com/studio/3/image.jpg" alt="">
-					<h4><%= data[2].artist %> </h4>
-					<p><%= data[2].song %> </p>
-					<div class="single_player">
-						<div class="jp-jplayer jplayer" data-ancestor=".jp_container_10" data-url="https://kr.object.ncloudstorage.com/studio/3/music.mp3"></div>
-						<div class="jp-audio jp_container_10" role="application" aria-label="media player">
-							<div class="jp-gui jp-interface">
-								<!-- Player Controls -->
-								<div class="ss-controls">
-									<div class="songs-links">
-										<!-- <a href=""><img src="img/icons/p-1.png" alt=""></a>
-										<a href=""><img src="img/icons/p-2.png" alt=""></a>
-										<a href=""><img src="img/icons/p-3.png" alt=""></a> -->
-									</div>
-									<div class="player_controls_box">
-										<button class="jp-prev player_button" tabindex="0"></button>
-										<button class="jp-play player_button" tabindex="0"></button>
-										<button class="jp-next player_button" tabindex="0"></button>
-										<button class="jp-stop player_button" tabindex="0"></button>
-									</div>
-								</div>
-								<!-- Progress Bar -->
-								<div class="player_bars">
-									<div class="jp-progress">
-										<div class="jp-seek-bar">
-											<div>
-												<div class="jp-play-bar"><div class="jp-current-time" role="timer" aria-label="time">0:00</div></div>
-											</div>
-										</div>
-									</div>
-									<div class="jp-duration ml-auto" role="timer" aria-label="duration">00:00</div>
-								</div>
-							</div>
-							<div class="jp-no-solution">
-								<span>Update Required</span>
-								To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-	</div>
-</section>
-<!-- Concept section end -->
+	</section>
+	<!-- Concept section end -->
 
 
 
 	<!-- Subscription section -->
-	<section class="subscription-section spad">
+	<!-- <section class="subscription-section spad">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6">
@@ -264,16 +145,16 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</section> -->
 	<!-- Subscription section end -->
 
 	<!-- Premium section end -->
-	<section class="premium-section spad">
+	<!-- <section class="premium-section spad">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6">
 					<div class="section-title">
-						<h2>Why Watch Out Studio</h2>
+						<h2>Why MANMANman Studio</h2>
 					</div>
 				</div>
 				<div class="col-lg-6">
@@ -308,7 +189,7 @@
 				
 			</div>
 		</div>
-	</section>
+	</section> -->
 	<!-- Premium section end -->
 
 	<!-- Footer section -->
@@ -324,12 +205,12 @@
 	<script src="/js/main.js"></script>
 
 	<!-- Audio Players js -->
-	<script src="/js/jquery.jplayer.min.js"></script>
-	<script src="/js/wavesurfer.min.js"></script>
+	<!-- <script src="/js/jquery.jplayer.min.js"></script>
+	<script src="/js/wavesurfer.min.js"></script> -->
 
 	<!-- Audio Players Initialization -->
-	<script src="/js/WaveSurferInit.js"></script>
-	<script src="/js/jplayerInit.js"></script>
+	<!-- <script src="/js/WaveSurferInit.js"></script>
+	<script src="/js/jplayerInit.js"></script> -->
 
 </body>
 
