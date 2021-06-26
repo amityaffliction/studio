@@ -64,20 +64,11 @@ const parseInfo = (num) => {
     })
 }
 
-router.use((req, res, next) => {
-  if (req.acceptsLanguages('ko-KR', 'ko', 'kr'))
-    req.lang = 'kr'
-  else
-    req.lang = 'en'
-  next()
-})
-
 router.get('/', function (req, res, next) {
-  res.redirect(`/${req.lang}`)
+  res.redirect(`/kr`)
 });
 
 router.get('/kr', async (req, res, next) => {
-
   var result = await parseMainInfo();
 
   res.render('index_kr', {
@@ -94,19 +85,15 @@ router.get('/kr', async (req, res, next) => {
   //   });
   // })
 
+  router.get('/en', async (req, res, next) => {
 
-router.get('/en', function (req, res, next) {
-  new Promise((resolve, reject) => {
-    var result = parseMainInfo();
-    resolve(result);
-  }).then(result => {
-
+    var result = await parseMainInfo();
+  
     res.render('index_en', {
       data: result
     });
   })
 
-});
 
 /* GET contact page. */
 router.get('/contact', function (req, res, next) {
