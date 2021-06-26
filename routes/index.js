@@ -64,7 +64,7 @@ const parseInfo = (num) => {
     })
 }
 
-router.get('/', function (req, res, next) {
+router.get('/', async (req, res, next) =>{
   var result = await parseMainInfo();
 
   res.render('index_kr', {
