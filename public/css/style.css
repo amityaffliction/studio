@@ -390,16 +390,16 @@ Hero section
 }
 
 .hs-item .hs-text {
-	padding-top: 90px;
-	max-width: 475px;
+	padding-top: 150px;
+	max-width: 430px;
 }
 
 .hr-img img {
 	min-width: 430px;
 	position: relative;
-	padding: 100px 30px;
+	padding: 50px 30px;
 	left: -34px;
-	top: 250px;
+	top: 100px;
 	opacity: 0;
 }
 
@@ -1414,8 +1414,10 @@ Responsive
 		left: 15px;
 	}
 	.hr-img img {
-		min-width: 500px;
+		min-width: 400px;
 		position: relative;
+		/* left: 50px; */
+		/* top: 50px;  */
 	}
 	.sub-list {
 		padding: 70px 15px 50px 90px;
