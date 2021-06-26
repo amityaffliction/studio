@@ -4,21 +4,22 @@ var nodemailer = require('nodemailer');
 var sendinBlue = require('nodemailer-sendinblue-transport');
 var config = require('../config');
 var axios = require('axios')
+const ejs = require('ejs');
 
 var mailTemplate = require('../utility/sendMail')
 let transporter = nodemailer.createTransport({
-        host: "smtp-relay.sendinblue.com",
-        port: 587,
-        auth: {
-          user: "domankey@gmail.com",
-          pass: "G0SNX4bsahcPAYEO",
-        },
-   });
+  host: "smtp-relay.sendinblue.com",
+  port: 587,
+  auth: {
+    user: "domankey@gmail.com",
+    pass: "G0SNX4bsahcPAYEO",
+  },
+});
 
 /* GET home page. */
 
-const getId= (url) => {
-  return url.split('/')[url.split('/').length-1]
+const getId = (url) => {
+  return url.split('/')[url.split('/').length - 1]
 }
 
 const parseMainInfo = () => {
@@ -75,27 +76,32 @@ router.get('/', function (req, res, next) {
   res.redirect(`/${req.lang}`)
 });
 
-router.get('/kr', function (req, res, next) {
+router.get('/kr', async (req, res, next) => {
 
-  new Promise((resolve, reject) => {
-    var result =  parseMainInfo();
-    resolve(result);
-  }).then(result =>{
+  var result = await parseMainInfo();
 
-    res.render('index_kr',{
-      data: result
-    });
-  })
+  res.render('index_kr', {
+    data: result
+  });
+})
 
-});
+  // new Promise((resolve, reject) => {
+  //   var result =  parseMainInfo();
+  //   resolve(result);
+  // }).then(result =>{
+  //   res.render('index_kr',{
+  //     data: result
+  //   });
+  // })
+
 
 router.get('/en', function (req, res, next) {
   new Promise((resolve, reject) => {
-    var result =  parseMainInfo();
+    var result = parseMainInfo();
     resolve(result);
-  }).then(result =>{
+  }).then(result => {
 
-    res.render('index_en',{
+    res.render('index_en', {
       data: result
     });
   })
