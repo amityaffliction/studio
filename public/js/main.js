@@ -46,14 +46,14 @@ $(window).on('load', function() {
 
 	
 	$('.hero-slider').owlCarousel({
-		loop: true,
+		loop: false,
 		nav: false,
 		dots: true,
 		mouseDrag: false,
 		animateOut: 'fadeOut',
 		animateIn: 'fadeIn',
 		items: 1,
-		autoplay: true
+		autoplay: false
 	});
 
 })(jQuery);
